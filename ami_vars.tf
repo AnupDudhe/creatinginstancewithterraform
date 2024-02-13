@@ -2,6 +2,11 @@ variable "aws_instance_ami" {
     type =  string
     default =   "ami-0d2e2d99a673fca16"
 }
+
+variable "aws_instance_jenkins_ami" {
+    type =  string
+    default =   "ami-0e731c8a588258d0d"
+}
 variable "aws_instance_type" {
     type =  string
     default =   "t2.micro"
@@ -9,6 +14,15 @@ variable "aws_instance_type" {
 variable "aws_instance_key" {
     type =  string
     default =  "NVanupDelete"
+}
+variable "aws_ebs_volume_region" {
+        type =  string
+        default = "us-east-1a"
+}
+
+variable "aws_ebs_volume_size" {
+        type =  number
+        default = 40
 }
 
 
@@ -25,7 +39,19 @@ variable "aws_instance_disable_api_termination" {
 
 
     }
-#variable "aws_instance_map" {}
+variable "aws_instance_map" {
+     type = map
+     default = {
+        name = "for volume"
+        name_arn = "created_Via_tf"
+     }
+}
+
+variable "ec2_id" {
+    type = string
+    default = "i-0a4c9c29c16ad6c08"
+  
+}
 
 
    variable "aws_instance_all_parameters" {
